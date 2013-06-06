@@ -1,5 +1,7 @@
 #include "v8.h"
 #include "node.h"
+#include <stdio.h>
+#include <string.h>
 
 using namespace v8;
 
@@ -21,14 +23,21 @@ Greet(const Arguments &args) {
     if (!args[0]->IsString())
         return Scope.Close(Undefined());
 
-    char * string = (char *) args[0]->ToString()
-        ->GetExternalAsciiStringResource();
+    Local<String> StringArg = args[0]->ToString();
 
-    Handle<String> RString = String::New("Hello ");
+    int length = StringArg->Length() + 6;
 
-    RString->WriteAscii(string);
+    char * string = (char *) malloc(length);
+    char * string_arg = (* String::AsciiValue(StringArg));
 
-    return Scope.Close(RString);
+    strcpy(string, "Hello ");
+ 
+    /* string copy with offset */   
+    for (int i = 0; i < StringArg->Length(); i++) {
+        string[i + 6] = string_arg[i];
+    }
+
+    return Scope.Close(String::New(string, length));
 }
 
 NODE_MODULE(string, Initialize);
