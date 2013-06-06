@@ -11,6 +11,10 @@
         {
             "target_name": "string",
             "sources": ["src/string.cc"]
+        },
+        {
+            "target_name": "object",
+            "sources": ["src/object.cc"]
         }
     ]
 }
