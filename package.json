@@ -1,0 +1,39 @@
+{
+    "name": "node-addons",
+
+    "version": "0.0.0",
+
+    "keywords": ["C", "C++", "Addons"],  
+
+    "description": "NodeJs add-on examples",
+  
+    "scripts": {
+        "test": "make test",
+        "install": "make install"
+    },
+  
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/bodokaiser/node-addons.git"
+    },
+
+    "dependencies": {
+        "node-gyp": "*",
+        "mocha": "*",
+        "chai": "*"
+    },
+  
+    "author": "Bodo Kaiser <i@bodokaiser.io>",
+  
+    "license": "BSD",
+  
+    "gypfile": true,
+  
+    "readmeFilename": "README.md",
+  
+    "gitHead": "31c26cdd3542480fc28999b9c68f7222042baded",
+  
+    "bugs": {
+        "url": "https://github.com/bodokaiser/node-addons/issues"
+    }
+}

@@ -1,9 +1,22 @@
-check: test
+test: test-boolean
 
-test: test-sample
+build: build-boolean
 
-MOCHA_FLAGS = --require should
+install: deps configure build
 
-test-sample:
+MOCHA_FLAGS = --require chai
+
+deps:
+	npm install -d
+
+configure:
+	./node_modules/.bin/node-gyp \
+		configure
+
+build-boolean:
+	./node_modules/.bin/node-gyp \
+		build
+
+test-boolean:
 	./node_modules/.bin/mocha \
         $(MOCHA_FLAGS) test/*.js
