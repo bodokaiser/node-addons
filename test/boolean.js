@@ -12,7 +12,7 @@ describe('Boolean', function() {
 
     });
 
-    describe('exec', function() {
+    describe('#exec', function() {
 
         it('should return true for false', function() {
             chai.expect(exports.exec(false)).to.be.true;
