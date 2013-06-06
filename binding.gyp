@@ -15,6 +15,10 @@
         {
             "target_name": "object",
             "sources": ["src/object.cc"]
+        },
+        {
+            "target_name": "array",
+            "sources": ["src/array.cc"]
         }
     ]
 }
