@@ -7,12 +7,12 @@ exported through the v8 api.
 
 This repository contains NodeJs C++ Addons for following JavaScript objects:
 
-* [Boolean](http://github.com/bodokaiser/blob/master/src/boolean.cc)
-* [Number](http://github.com/bodokaiser/blob/master/src/number.cc)
-* [String](http://github.com/bodokaiser/blob/master/src/string.cc)
-* [Array](http://github.com/bodokaiser/blob/master/src/array.cc)
-* [Object](http://github.com/bodokaiser/blob/master/src/object.cc)
-* [Function](http://github.com/bodokaiser/blob/master/src/function.cc)
+* [Boolean](http://github.com/bodokaiser/node-addons/blob/master/src/boolean.cc)
+* [Number](http://github.com/bodokaiser/node-addons/blob/master/src/number.cc)
+* [String](http://github.com/bodokaiser/node-addons/blob/master/src/string.cc)
+* [Array](http://github.com/bodokaiser/node-addons/blob/master/src/array.cc)
+* [Object](http://github.com/bodokaiser/node-addons/blob/master/src/object.cc)
+* [Function](http://github.com/bodokaiser/node-addons/blob/master/src/function.cc)
 
 ## License
 

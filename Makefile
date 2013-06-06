@@ -1,6 +1,6 @@
-test: test-boolean
+test: test-addons
 
-build: build-boolean
+build: build-addons
 
 install: deps configure build
 
@@ -9,14 +9,10 @@ MOCHA_FLAGS = --require chai
 deps:
 	npm install -d
 
-configure:
-	./node_modules/.bin/node-gyp \
-		configure
-
-build-boolean:
-	./node_modules/.bin/node-gyp \
-		build
-
-test-boolean:
+test-addons:
 	./node_modules/.bin/mocha \
         $(MOCHA_FLAGS) test/*.js
+
+build-addons:
+	./node_modules/.bin/node-gyp \
+		configure build
