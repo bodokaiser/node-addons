@@ -21,8 +21,19 @@ Handle<Value>
 Get(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsObject() || !args[1]->IsString())
+    if (!args[0]->IsObject()) {
+        ThrowException(Exception::Error(
+                    String::New("First argument should be an Object.")));
+
         return scope.Close(Undefined());
+    }
+
+    if (!args[1]->IsString()) {
+        ThrowException(Exception::Error(
+                    String::New("Second argument should be a String.")));
+
+        return scope.Close(Undefined());
+    }
 
     Local<Object> obj = args[0]->ToObject();
     Local<String> str = args[1]->ToString();
@@ -37,8 +48,26 @@ Handle<Value>
 Set(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsObject() || !args[1]->IsString())
+    if (!args[0]->IsObject()) {
+        ThrowException(Exception::Error(
+                    String::New("First argument should be an Object.")));
+
         return scope.Close(Undefined());
+    }
+
+    if (!args[1]->IsString()) {
+        ThrowException(Exception::Error(
+                    String::New("Second argument should be a String.")));
+
+        return scope.Close(Undefined());
+    }
+
+    if (args[2]->IsUndefined()) {
+        ThrowException(Exception::Error(
+                    String::New("Third argument should not be Undefined.")));
+
+        return scope.Close(Undefined());
+    }
 
     Local<Object> obj = args[0]->ToObject();
     Local<String> str = args[1]->ToString();

@@ -18,8 +18,12 @@ Handle<Value>
 ReturnBoolean(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsBoolean())
+    if (!args[0]->IsBoolean()) {
+        ThrowException(Exception::Error(
+                    String::New("Argument should be a Boolean.")));
+
         return scope.Close(Undefined());
+    }
 
     bool boolean = args[0]->BooleanValue();
 

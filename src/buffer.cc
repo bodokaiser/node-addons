@@ -22,8 +22,12 @@ Handle<Value>
 Create(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsString())
+    if (!args[0]->IsString()) {
+        ThrowException(Exception::Error(
+                    String::New("Argument should be a String.")));
+
         return scope.Close(Undefined());
+    }
 
     int len = args[0]->ToString()->Length();
     char * str  = (* String::AsciiValue(args[0]));
@@ -35,8 +39,12 @@ Handle<Value>
 ToString(const Arguments &args) {
     HandleScope scope;
 
-    if (!node::Buffer::HasInstance(args[0]))
+    if (!node::Buffer::HasInstance(args[0])) {
+        ThrowException(Exception::Error(
+                    String::New("Argument should be a Buffer.")));
+
         return scope.Close(Undefined());
+    }
 
     char * data = node::Buffer::Data(args[0]);
     size_t len = node::Buffer::Length(args[0]);

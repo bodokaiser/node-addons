@@ -32,8 +32,12 @@ Handle<Value>
 Add(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsNumber() || !args[1]->IsNumber())
+    if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
+        ThrowException(Exception::Error(
+                    String::New("Arguments should be Numbers.")));
+
         return scope.Close(Undefined());
+    }
 
     int64_t a = args[0]->NumberValue();
     int64_t b = args[1]->NumberValue();
@@ -45,8 +49,12 @@ Handle<Value>
 Substract(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsNumber() || !args[1]->IsNumber())
+    if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
+        ThrowException(Exception::Error(
+                    String::New("Arguments should be Numbers.")));
+
         return scope.Close(Undefined());
+    }
 
     int64_t a = args[0]->NumberValue();
     int64_t b = args[1]->NumberValue();
@@ -58,8 +66,12 @@ Handle<Value>
 Multiply(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsNumber() || !args[1]->IsNumber())
+    if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
+        ThrowException(Exception::Error(
+                    String::New("Arguments should be Numbers.")));
+
         return scope.Close(Undefined());
+    }
 
     int64_t a = args[0]->NumberValue();
     int64_t b = args[1]->NumberValue();
@@ -71,8 +83,12 @@ Handle<Value>
 Divide(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsNumber() || !args[1]->IsNumber())
+    if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
+        ThrowException(Exception::Error(
+                    String::New("Arguments should be Numbers.")));
+
         return scope.Close(Undefined());
+    }
 
     int64_t a = args[0]->NumberValue();
     int64_t b = args[1]->NumberValue();
@@ -84,8 +100,12 @@ Handle<Value>
 Power(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsNumber() || !args[1]->IsNumber())
+    if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
+        ThrowException(Exception::Error(
+                    String::New("Arguments should be Numbers.")));
+
         return scope.Close(Undefined());
+    }
 
     int64_t a = args[0]->NumberValue();
     int64_t b = args[1]->NumberValue();

@@ -17,17 +17,21 @@ Initialize(Handle<Object> exports) {
 Handle<Value>
 Push(const Arguments &args) {
     HandleScope scope;
-
-    if (!args[0]->IsArray() || args[1]->IsUndefined())
-        return scope.Close(Undefined());
-
-    Local<Array> array = Local<Array>::Cast(args[0]->ToObject());
-
-    int i = array->Length();
-
-    array->Set(Number::New(i), args[1]);
     
-    return scope.Close(array);
+    if (!args[0]->IsArray() || args[1]->IsUndefined()) {
+        ThrowException(Exception::Error(
+                    String::New("Argument should be an Array.")));
+
+        return scope.Close(Undefined());
+    }
+
+    Local<Array> arr = Local<Array>::Cast(args[0]->ToObject());
+
+    int i = arr->Length();
+
+    arr->Set(Number::New(i), args[1]);
+    
+    return scope.Close(arr);
 }
 
 NODE_MODULE(array, Initialize)

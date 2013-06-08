@@ -20,8 +20,12 @@ Handle<Value>
 Greet(const Arguments &args) {
     HandleScope scope;
 
-    if (!args[0]->IsString())
+    if (!args[0]->IsString()) {
+        ThrowException(Exception::Error(
+                    String::New("Argument should be a String.")));
+
         return scope.Close(Undefined());
+    }
 
     Local<String> str = args[0]->ToString();
 
