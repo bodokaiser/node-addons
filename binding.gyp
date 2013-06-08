@@ -23,6 +23,10 @@
         {
             "target_name": "buffer",
             "sources": ["src/buffer.cc"]
+        },
+        {
+            "target_name": "function",
+            "sources": ["src/function.cc"]
         }
     ]
 }
