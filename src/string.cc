@@ -18,26 +18,24 @@ Initialize(Handle<Object> exports) {
 
 Handle<Value>
 Greet(const Arguments &args) {
-    HandleScope Scope;
+    HandleScope scope;
 
     if (!args[0]->IsString())
-        return Scope.Close(Undefined());
+        return scope.Close(Undefined());
 
-    Local<String> StringArg = args[0]->ToString();
+    Local<String> str = args[0]->ToString();
 
-    int length = StringArg->Length() + 6;
+    int nstr_len = str->Length() + 6;
+    char * nstr = (char *) malloc(nstr_len);
+    char * nstr_arg = (* String::AsciiValue(str));
 
-    char * string = (char *) malloc(length);
-    char * string_arg = (* String::AsciiValue(StringArg));
-
-    strcpy(string, "Hello ");
+    strcpy(nstr, "Hello ");
  
-    /* string copy with offset */   
-    for (int i = 0; i < StringArg->Length(); i++) {
-        string[i + 6] = string_arg[i];
+    for (int i = 0; i < str->Length(); i++) {
+        nstr[i + 6] = nstr_arg[i];
     }
 
-    return Scope.Close(String::New(string, length));
+    return scope.Close(String::New(nstr, nstr_len));
 }
 
 NODE_MODULE(string, Initialize)
