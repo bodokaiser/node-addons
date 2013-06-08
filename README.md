@@ -14,6 +14,7 @@ This repository contains NodeJs C++ Addons for following JavaScript objects:
 * [Array](http://github.com/bodokaiser/node-addons/blob/master/src/array.cc)
 * [Buffer](http://github.com/bodokaiser/node-addons/blob/master/src/buffer.cc)
 * [Function](http://github.com/bodokaiser/node-addons/blob/master/src/function.cc)
+* [Prototype](http://github.com/bodokaiser/node-addons/blob/master/src/prototype.cc)
 
 ## License
 

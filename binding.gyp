@@ -27,6 +27,11 @@
         {
             "target_name": "function",
             "sources": ["src/function.cc"]
+        },
+        {
+            "target_name": "prototype",
+            "sources": ["src/prototype.cc"]
         }
+
     ]
 }
