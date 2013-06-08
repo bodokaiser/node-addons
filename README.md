@@ -3,18 +3,67 @@
 **NodeJs Addons** is a repository which shows different JavaScript objects
 exported through the v8 api.
 
+If there is any issue which has cost you a lot of time figuring it out - our
+you want to add some more complexity. Then feel free to hack.
+
+## Installation
+
+    npm install node-addons
+    
+then hope it compiles - our manuelly do
+
+    cd ./node_modules/node-addons && make build
+
+finally you can use any compiled example with **require**
+
+    var addons = require('node-addons');
+
+    console.log(addons.string.value);
+    console.log(addons.string.greet('Bodo'));
+
 ## Content
 
-This repository contains NodeJs C++ Addons for following JavaScript objects:
+Currently there are examples for following objects:
 
-* [Boolean](http://github.com/bodokaiser/node-addons/blob/master/src/boolean.cc)
-* [Number](http://github.com/bodokaiser/node-addons/blob/master/src/number.cc)
-* [String](http://github.com/bodokaiser/node-addons/blob/master/src/string.cc)
-* [Object](http://github.com/bodokaiser/node-addons/blob/master/src/object.cc)
-* [Array](http://github.com/bodokaiser/node-addons/blob/master/src/array.cc)
-* [Buffer](http://github.com/bodokaiser/node-addons/blob/master/src/buffer.cc)
-* [Function](http://github.com/bodokaiser/node-addons/blob/master/src/function.cc)
-* [Prototype](http://github.com/bodokaiser/node-addons/blob/master/src/prototype.cc)
+### Boolean
+
+* [code](http://github.com/bodokaiser/node-addons/blob/master/src/boolean.cc)
+* [test](http://github.com/bodokaiser/node-addons/blob/master/test/boolean.js)
+
+### Number
+
+* [code](http://github.com/bodokaiser/node-addons/blob/master/src/number.cc)
+* [test](http://github.com/bodokaiser/node-addons/blob/master/test/number.js)
+
+### String
+
+* [code](http://github.com/bodokaiser/node-addons/blob/master/src/string.cc)
+* [test](http://github.com/bodokaiser/node-addons/blob/master/test/string.js)
+
+### Object
+
+* [code](http://github.com/bodokaiser/node-addons/blob/master/src/object.cc)
+* [test](http://github.com/bodokaiser/node-addons/blob/master/test/object.js)
+
+### Array
+
+* [code](http://github.com/bodokaiser/node-addons/blob/master/src/array.cc)
+* [test](http://github.com/bodokaiser/node-addons/blob/master/test/array.js)
+
+### Buffer
+
+* [code](http://github.com/bodokaiser/node-addons/blob/master/src/buffer.cc)
+* [test](http://github.com/bodokaiser/node-addons/blob/master/test/buffer.js)
+
+### Function
+
+* [code](http://github.com/bodokaiser/node-addons/blob/master/src/function.cc)
+* [test](http://github.com/bodokaiser/node-addons/blob/master/test/function.js)
+
+### Prototype
+
+* [code](http://github.com/bodokaiser/node-addons/blob/master/src/prototype.cc)
+* [test](http://github.com/bodokaiser/node-addons/blob/master/test/prototype.js)
 
 ## License
 

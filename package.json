@@ -1,7 +1,7 @@
 {
     "name": "node-addons",
 
-    "version": "0.0.0",
+    "version": "0.1.1",
 
     "keywords": ["C", "C++", "Addons"],  
 
@@ -30,8 +30,6 @@
     "gypfile": true,
   
     "readmeFilename": "README.md",
-  
-    "gitHead": "31c26cdd3542480fc28999b9c68f7222042baded",
   
     "bugs": {
         "url": "https://github.com/bodokaiser/node-addons/issues"
