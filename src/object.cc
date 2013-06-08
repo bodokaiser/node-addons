@@ -8,12 +8,12 @@ Handle<Value> Set(const Arguments &args);
 
 void 
 Initialize(Handle<Object> exports) {
-    exports->Set(String::New("value"),
+    exports->Set(String::NewSymbol("value"),
             Object::New());
 
-    exports->Set(String::New("get"),
+    exports->Set(String::NewSymbol("get"),
             FunctionTemplate::New(Get)->GetFunction());
-    exports->Set(String::New("set"),
+    exports->Set(String::NewSymbol("set"),
             FunctionTemplate::New(Set)->GetFunction());
 }
 

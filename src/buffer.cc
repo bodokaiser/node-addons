@@ -9,12 +9,12 @@ Handle<Value> ToString(const Arguments &args);
 
 void 
 Initialize(Handle<Object> exports) {
-    exports->Set(String::New("value"),
+    exports->Set(String::NewSymbol("value"),
             node::Buffer::New(5)->handle_);
 
-    exports->Set(String::New("create"),
+    exports->Set(String::NewSymbol("create"),
             FunctionTemplate::New(Create)->GetFunction());
-    exports->Set(String::New("toString"),
+    exports->Set(String::NewSymbol("toString"),
             FunctionTemplate::New(ToString)->GetFunction());
 }
 

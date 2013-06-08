@@ -9,10 +9,10 @@ Handle<Value> Greet(const Arguments &args);
 
 void 
 Initialize(Handle<Object> exports) {
-    exports->Set(String::New("value"),
+    exports->Set(String::NewSymbol("value"),
             String::New("Hello World"));
 
-    exports->Set(String::New("greet"),
+    exports->Set(String::NewSymbol("greet"),
             FunctionTemplate::New(Greet)->GetFunction());
 }
 
@@ -40,4 +40,4 @@ Greet(const Arguments &args) {
     return Scope.Close(String::New(string, length));
 }
 
-NODE_MODULE(string, Initialize);
+NODE_MODULE(string, Initialize)

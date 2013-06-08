@@ -13,18 +13,18 @@ Handle<Value> Power(const Arguments &args);
 
 void 
 Initialize(Handle<Object> exports) {
-    exports->Set(String::New("value"),
+    exports->Set(String::NewSymbol("value"),
             Number::New(666));
 
-    exports->Set(String::New("add"),
+    exports->Set(String::NewSymbol("add"),
             FunctionTemplate::New(Add)->GetFunction());
-    exports->Set(String::New("substract"),
+    exports->Set(String::NewSymbol("substract"),
             FunctionTemplate::New(Substract)->GetFunction());
-    exports->Set(String::New("multiply"),
+    exports->Set(String::NewSymbol("multiply"),
             FunctionTemplate::New(Multiply)->GetFunction());
-    exports->Set(String::New("divide"),
+    exports->Set(String::NewSymbol("divide"),
             FunctionTemplate::New(Divide)->GetFunction());
-    exports->Set(String::New("power"),
+    exports->Set(String::NewSymbol("power"),
             FunctionTemplate::New(Power)->GetFunction());
 }
 
@@ -93,4 +93,4 @@ Power(const Arguments &args) {
     return Scope.Close(Number::New(pow(a, b)));
 }
 
-NODE_MODULE(number, Initialize);
+NODE_MODULE(number, Initialize)

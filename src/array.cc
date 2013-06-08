@@ -7,10 +7,10 @@ Handle<Value> Push(const Arguments &args);
 
 void 
 Initialize(Handle<Object> exports) {
-    exports->Set(String::New("value"),
+    exports->Set(String::NewSymbol("value"),
             Array::New());
 
-    exports->Set(String::New("push"),
+    exports->Set(String::NewSymbol("push"),
             FunctionTemplate::New(Push)->GetFunction());
 }
 
@@ -30,4 +30,4 @@ Push(const Arguments &args) {
     return Scope.Close(ArrayArg);
 }
 
-NODE_MODULE(array, Initialize);
+NODE_MODULE(array, Initialize)

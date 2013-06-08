@@ -7,10 +7,10 @@ Handle<Value> ReturnBoolean(const Arguments &args);
 
 void 
 Initialize(Handle<Object> exports) {
-    exports->Set(String::New("value"),
+    exports->Set(String::NewSymbol("value"),
             Boolean::New(false));
 
-    exports->Set(String::New("exec"),
+    exports->Set(String::NewSymbol("exec"),
             FunctionTemplate::New(ReturnBoolean)->GetFunction());
 }
 
@@ -26,4 +26,4 @@ ReturnBoolean(const Arguments &args) {
     return Scope.Close(Boolean::New(!Bool));
 }
 
-NODE_MODULE(boolean, Initialize);
+NODE_MODULE(boolean, Initialize)
