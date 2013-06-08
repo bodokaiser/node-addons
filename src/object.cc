@@ -19,33 +19,33 @@ Initialize(Handle<Object> exports) {
 
 Handle<Value>
 Get(const Arguments &args) {
-    HandleScope Scope;
+    HandleScope scope;
 
     if (!args[0]->IsObject() || !args[1]->IsString())
-        return Scope.Close(Undefined());
+        return scope.Close(Undefined());
 
-    Local<Object> ObjectArg = args[0]->ToObject();
-    Local<String> StringArg = args[1]->ToString();
+    Local<Object> obj = args[0]->ToObject();
+    Local<String> str = args[1]->ToString();
 
-    if (!ObjectArg->Has(StringArg))
-        return Scope.Close(Undefined());
+    if (!obj->Has(str))
+        return scope.Close(Undefined());
 
-    return Scope.Close(ObjectArg->Get(StringArg));
+    return scope.Close(obj->Get(str));
 }
 
 Handle<Value>
 Set(const Arguments &args) {
-    HandleScope Scope;
+    HandleScope scope;
 
     if (!args[0]->IsObject() || !args[1]->IsString())
-        return Scope.Close(Undefined());
+        return scope.Close(Undefined());
 
-    Local<Object> ObjectArg = args[0]->ToObject();
-    Local<String> StringArg = args[1]->ToString();
+    Local<Object> obj = args[0]->ToObject();
+    Local<String> str = args[1]->ToString();
     
-    ObjectArg->Set(StringArg, args[2]);
+    obj->Set(str, args[2]);
     
-    return Scope.Close(ObjectArg);
+    return scope.Close(obj);
 }
 
 NODE_MODULE(object, Initialize);

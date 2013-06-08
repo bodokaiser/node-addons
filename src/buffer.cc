@@ -20,29 +20,29 @@ Initialize(Handle<Object> exports) {
 
 Handle<Value>
 Create(const Arguments &args) {
-    HandleScope Scope;
+    HandleScope scope;
 
     if (!args[0]->IsString())
-        return Scope.Close(Undefined());
+        return scope.Close(Undefined());
 
-    int length = args[0]->ToString()->Length();
-    char * string  = (* String::AsciiValue(args[0]));
+    int len = args[0]->ToString()->Length();
+    char * str  = (* String::AsciiValue(args[0]));
 
-    return Scope.Close(node::Buffer::New(string, length)->handle_);
+    return scope.Close(node::Buffer::New(str, len)->handle_);
 }
 
 Handle<Value>
 ToString(const Arguments &args) {
-    HandleScope Scope;
+    HandleScope scope;
 
     if (!node::Buffer::HasInstance(args[0]))
-        return Scope.Close(Undefined());
+        return scope.Close(Undefined());
 
     char * data = node::Buffer::Data(args[0]);
-    size_t length = node::Buffer::Length(args[0]);
-    const char * string = (const char *) data;
+    size_t len = node::Buffer::Length(args[0]);
+    const char * str = (const char *) data;
     
-    return Scope.Close(String::New(string, length));
+    return scope.Close(String::New(str, len));
 }
 
 NODE_MODULE(buffer, Initialize)

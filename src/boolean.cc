@@ -16,14 +16,14 @@ Initialize(Handle<Object> exports) {
 
 Handle<Value>
 ReturnBoolean(const Arguments &args) {
-    HandleScope Scope;
+    HandleScope scope;
 
     if (!args[0]->IsBoolean())
-        return Scope.Close(Undefined());
+        return scope.Close(Undefined());
 
-    bool Bool = args[0]->BooleanValue();
+    bool boolean = args[0]->BooleanValue();
 
-    return Scope.Close(Boolean::New(!Bool));
+    return scope.Close(Boolean::New(!boolean));
 }
 
 NODE_MODULE(boolean, Initialize)

@@ -14,23 +14,23 @@ Initialize(Handle<Object> exports, Handle<Object> module) {
 
 Handle<Value>
 Echo(const Arguments &args) {
-    HandleScope Scope;
+    HandleScope scope;
 
-    Local<String> Str = String::New("Hello World");
+    Local<String> str = String::New("Hello World");
 
-    return Scope.Close(Str);
+    return scope.Close(str);
 }
 
 Handle<Value>
 Create(const Arguments &args) {
-    HandleScope Scope;
+    HandleScope scope;
 
-    Local<FunctionTemplate> Tpl = FunctionTemplate::New(Echo);
-    Local<Function> Fn = Tpl->GetFunction();
+    Local<FunctionTemplate> tpl = FunctionTemplate::New(Echo);
+    Local<Function> fn = tpl->GetFunction();
 
-    Fn->SetName(String::NewSymbol("echo"));
+    fn->SetName(String::NewSymbol("echo"));
 
-    return Scope.Close(Fn);
+    return scope.Close(fn);
 }
 
 NODE_MODULE(function, Initialize)

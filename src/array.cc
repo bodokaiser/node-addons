@@ -16,18 +16,18 @@ Initialize(Handle<Object> exports) {
 
 Handle<Value>
 Push(const Arguments &args) {
-    HandleScope Scope;
+    HandleScope scope;
 
     if (!args[0]->IsArray() || args[1]->IsUndefined())
-        return Scope.Close(Undefined());
+        return scope.Close(Undefined());
 
-    Local<Array> ArrayArg = Local<Array>::Cast(args[0]->ToObject());
+    Local<Array> array = Local<Array>::Cast(args[0]->ToObject());
 
-    int i = ArrayArg->Length();
+    int i = array->Length();
 
-    ArrayArg->Set(Number::New(i), args[1]);
+    array->Set(Number::New(i), args[1]);
     
-    return Scope.Close(ArrayArg);
+    return scope.Close(array);
 }
 
 NODE_MODULE(array, Initialize)
