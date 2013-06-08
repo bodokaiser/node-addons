@@ -19,6 +19,10 @@
         {
             "target_name": "array",
             "sources": ["src/array.cc"]
+        },
+        {
+            "target_name": "buffer",
+            "sources": ["src/buffer.cc"]
         }
     ]
 }
