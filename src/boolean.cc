@@ -19,7 +19,7 @@ Revert(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsBoolean()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Argument should be a Boolean.")));
 
         return scope.Close(Undefined());

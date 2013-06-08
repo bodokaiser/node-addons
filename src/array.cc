@@ -19,7 +19,7 @@ Push(const Arguments &args) {
     HandleScope scope;
     
     if (!args[0]->IsArray() || args[1]->IsUndefined()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Argument should be an Array.")));
 
         return scope.Close(Undefined());

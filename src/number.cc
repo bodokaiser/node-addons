@@ -33,7 +33,7 @@ Add(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Arguments should be Numbers.")));
 
         return scope.Close(Undefined());
@@ -50,7 +50,7 @@ Substract(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Arguments should be Numbers.")));
 
         return scope.Close(Undefined());
@@ -67,7 +67,7 @@ Multiply(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Arguments should be Numbers.")));
 
         return scope.Close(Undefined());
@@ -84,7 +84,7 @@ Divide(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Arguments should be Numbers.")));
 
         return scope.Close(Undefined());
@@ -101,7 +101,7 @@ Power(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsNumber() || !args[1]->IsNumber()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Arguments should be Numbers.")));
 
         return scope.Close(Undefined());

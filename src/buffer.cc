@@ -23,7 +23,7 @@ Create(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsString()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Argument should be a String.")));
 
         return scope.Close(Undefined());
@@ -40,7 +40,7 @@ ToString(const Arguments &args) {
     HandleScope scope;
 
     if (!node::Buffer::HasInstance(args[0])) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Argument should be a Buffer.")));
 
         return scope.Close(Undefined());

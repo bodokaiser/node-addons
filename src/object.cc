@@ -22,14 +22,14 @@ Get(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsObject()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("First argument should be an Object.")));
 
         return scope.Close(Undefined());
     }
 
     if (!args[1]->IsString()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Second argument should be a String.")));
 
         return scope.Close(Undefined());
@@ -49,21 +49,21 @@ Set(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsObject()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("First argument should be an Object.")));
 
         return scope.Close(Undefined());
     }
 
     if (!args[1]->IsString()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Second argument should be a String.")));
 
         return scope.Close(Undefined());
     }
 
     if (args[2]->IsUndefined()) {
-        ThrowException(Exception::Error(
+        ThrowException(Exception::TypeError(
                     String::New("Third argument should not be Undefined.")));
 
         return scope.Close(Undefined());
