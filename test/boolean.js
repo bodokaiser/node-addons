@@ -12,14 +12,14 @@ describe('Boolean', function() {
 
     });
 
-    describe('#exec', function() {
+    describe('#revert', function() {
 
         it('should return true for false', function() {
-            chai.expect(exports.exec(false)).to.be.true;
+            chai.expect(exports.revert(false)).to.be.true;
         });
 
         it('should return false for true', function() {
-            chai.expect(exports.exec(true)).to.be.false;
+            chai.expect(exports.revert(true)).to.be.false;
         });
 
     });

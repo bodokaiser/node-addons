@@ -3,19 +3,19 @@
 
 using namespace v8;
 
-Handle<Value> ReturnBoolean(const Arguments &args);
+Handle<Value> Revert(const Arguments &args);
 
 void 
 Initialize(Handle<Object> exports) {
     exports->Set(String::NewSymbol("value"),
             Boolean::New(false));
 
-    exports->Set(String::NewSymbol("exec"),
-            FunctionTemplate::New(ReturnBoolean)->GetFunction());
+    exports->Set(String::NewSymbol("revert"),
+            FunctionTemplate::New(Revert)->GetFunction());
 }
 
 Handle<Value>
-ReturnBoolean(const Arguments &args) {
+Revert(const Arguments &args) {
     HandleScope scope;
 
     if (!args[0]->IsBoolean()) {
@@ -25,9 +25,9 @@ ReturnBoolean(const Arguments &args) {
         return scope.Close(Undefined());
     }
 
-    bool boolean = args[0]->BooleanValue();
+    bool boo = args[0]->BooleanValue();
 
-    return scope.Close(Boolean::New(!boolean));
+    return scope.Close(Boolean::New(!boo));
 }
 
 NODE_MODULE(boolean, Initialize)
