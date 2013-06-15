@@ -1,7 +1,6 @@
-var chai = require('chai');
-
 describe('Function', function() {
 
+    var chai = require('chai');
     var create = require('../build/Release/function');
 
     describe('#create', function() {

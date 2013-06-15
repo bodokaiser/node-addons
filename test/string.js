@@ -1,8 +1,7 @@
-var chai = require('chai');
-
 describe('String', function() {
 
-    var exports = require('../build/RELEASE/string');
+    var chai = require('chai');
+    var exports = require('../build/Release/string');
 
     describe('value', function() {
 

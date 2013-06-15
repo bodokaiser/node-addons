@@ -1,7 +1,6 @@
-var chai = require('chai');
-
 describe('Prototype', function() {
 
+    var chai = require('chai');
     var Prototype = require('../build/Release/prototype');
 
     it('should return an instance of Prototype', function() {

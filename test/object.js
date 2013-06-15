@@ -1,7 +1,6 @@
-var chai = require('chai');
-
 describe('Object', function() {
 
+    var chai = require('chai');
     var exports = require('../build/Release/object');
 
     describe('value', function() {

@@ -1,15 +1,27 @@
 {
     "name": "node-addons",
-
-    "version": "0.1.1",
-
-    "keywords": ["C", "C++", "Addons"],  
-
-    "description": "NodeJs add-on examples",
   
+    "author": "Bodo Kaiser <i@bodokaiser.io>",
+  
+    "license": "BSD",
+ 
+    "version": "0.1.2",
+
+    "keywords": ["C", "C++", "Add-on", "Example"],  
+
+    "description": "NodeJs v8 binding (add-on) examples",
+  
+    "readmeFilename": "README.md",
+  
+    "gypfile": true,
+  
+    "bugs": {
+        "url": "https://github.com/bodokaiser/node-addons/issues"
+    },
+
     "scripts": {
         "test": "make test",
-        "install": "make install"
+        "prepublish": "make build && make test"
     },
   
     "repository": {
@@ -18,20 +30,8 @@
     },
 
     "dependencies": {
-        "node-gyp": "*",
-        "mocha": "*",
-        "chai": "*"
-    },
-  
-    "author": "Bodo Kaiser <i@bodokaiser.io>",
-  
-    "license": "BSD",
-  
-    "gypfile": true,
-  
-    "readmeFilename": "README.md",
-  
-    "bugs": {
-        "url": "https://github.com/bodokaiser/node-addons/issues"
+        "node-gyp": "0.10.0",
+        "mocha": "1.11.0",
+        "chai": "1.6.1"
     }
 }

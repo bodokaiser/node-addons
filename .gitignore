@@ -45,7 +45,3 @@ node_modules
 #######################
 *.swp
 .c9revisions
-
-# dependend sources #
-#####################
-build

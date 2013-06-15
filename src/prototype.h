@@ -3,19 +3,26 @@
 
 #include "node.h"
 
-class Prototype : public node::ObjectWrap {
+using node::ObjectWrap;
+
+using v8::Arguments;
+using v8::Handle;
+using v8::Value;
+using v8::Object;
+
+class Prototype : public ObjectWrap {
     public:
-        static void Initialize(v8::Handle<v8::Object> module);
+        static void Initialize(Handle<Object> module);
 
     private:
         Prototype();
         ~Prototype();
 
-        static v8::Handle<v8::Value> New(const v8::Arguments &args);
-        static v8::Handle<v8::Value> Get(const v8::Arguments &args);
-        static v8::Handle<v8::Value> Set(const v8::Arguments &args);
+        static Handle<Value> New(const Arguments &args);
+        static Handle<Value> Get(const Arguments &args);
+        static Handle<Value> Set(const Arguments &args);
 
-        v8::Handle<v8::Object> obj_;
+        Handle<Object> obj_;
 };
 
 #endif

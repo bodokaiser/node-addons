@@ -1,8 +1,7 @@
-var chai = require('chai');
-
 describe('Boolean', function() {
 
-    var exports = require('../build/RELEASE/boolean');
+    var chai = require('chai');
+    var exports = require('../build/Release/boolean');
 
     describe('value', function() {
 

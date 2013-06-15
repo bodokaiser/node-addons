@@ -1,7 +1,6 @@
-var chai = require('chai');
-
 describe('Array', function() {
 
+    var chai = require('chai');
     var exports = require('../build/Release/array');
 
     describe('value', function() {

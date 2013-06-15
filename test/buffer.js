@@ -1,7 +1,6 @@
-var chai = require('chai');
-
 describe('Buffer', function() {
 
+    var chai = require('chai');
     var exports = require('../build/Release/buffer');
 
     describe('value', function() {
