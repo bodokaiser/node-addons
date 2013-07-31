@@ -3,4 +3,4 @@
 export builddir_name ?= build/./.
 .PHONY: all
 all:
-	$(MAKE) array string object buffer boolean function number prototype
+	$(MAKE) string function number prototype array object boolean buffer
