@@ -67,7 +67,7 @@ Currently there are examples for following objects:
 
 ## License
 
-Copyright © 2013 Bodo Kaiser <bodo.rene.kaiser@googlemail.com>
+Copyright © 2013 Bodo Kaiser <i@bodokaiser.io>
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
