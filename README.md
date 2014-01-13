@@ -3,14 +3,14 @@
 **NodeJs Addons** is a repository which shows different JavaScript objects
 exported through the v8 api.
 
-If there is any issue which has cost you a lot of time figuring it out - our
-you want to add some more complexity. Then feel free to hack.
+If there are any issues which have cost you a lot of time figuring out - or
+you want to add some more complexity, then feel free to hack.
 
 ## Installation
 
     npm install node-addons
     
-then hope it compiles - our manuelly do
+then hope it compiles - or manually do
 
     cd ./node_modules/node-addons && make build
 
