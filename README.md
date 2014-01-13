@@ -10,7 +10,7 @@ you want to add some more complexity, then feel free to hack.
 
     npm install node-addons
     
-then hope it compiles - our manually do
+then hope it compiles - or manually do
 
     cd ./node_modules/node-addons && make build
 
