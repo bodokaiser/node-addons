@@ -17,7 +17,7 @@ Initialize(Handle<Object> exports) {
 Handle<Value>
 Push(const Arguments &args) {
     HandleScope scope;
-    
+
     if (!args[0]->IsArray() || args[1]->IsUndefined()) {
         ThrowException(Exception::TypeError(
                     String::New("Argument should be an Array.")));
@@ -30,7 +30,7 @@ Push(const Arguments &args) {
     int i = arr->Length();
 
     arr->Set(Number::New(i), args[1]);
-    
+
     return scope.Close(arr);
 }
 

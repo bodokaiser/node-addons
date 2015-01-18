@@ -1,39 +1,39 @@
+var chai   = require('chai');
+var addons = require('../lib');
+
 describe('Buffer', function() {
 
-    var chai = require('chai');
-    var exports = require('../build/Release/buffer');
+  describe('value', function() {
 
-    describe('value', function() {
-
-        it('should be a buffer', function() {
-            chai.expect(exports.value).to.be.an.instanceof(Buffer);
-        });
-
-        it('should have length 5', function() {
-            chai.expect(exports.value).to.have.length(5);
-        });
-
+    it('should be a buffer', function() {
+      chai.expect(addons.buffer.value).to.be.an.instanceof(Buffer);
     });
 
-    describe('#create', function() {
-
-        it('should return a Buffer containing "Hello"', function() {
-            var buf = exports.create('Hello');
-
-            chai.expect(buf).to.be.an.instanceof(Buffer);
-            chai.expect(buf.toString()).to.equal('Hello');
-        });
-
+    it('should have length 5', function() {
+      chai.expect(addons.buffer.value).to.have.length(5);
     });
 
-    describe('#toString', function() {
+  });
 
-        it('should return "Hello" for "Hello" buffer', function() {
-            var buf = new Buffer('Hello');
-            
-            chai.expect(exports.toString(buf)).to.equal('Hello');
-        });
+  describe('#create', function() {
 
+    it('should return a Buffer containing "Hello"', function() {
+      var buf = addons.buffer.create('Hello');
+
+      chai.expect(buf).to.be.an.instanceof(Buffer);
+      chai.expect(buf.toString()).to.equal('Hello');
     });
+
+  });
+
+  describe('#toString', function() {
+
+    it('should return "Hello" for "Hello" buffer', function() {
+      var buf = new Buffer('Hello');
+
+      chai.expect(addons.buffer.toString(buf)).to.equal('Hello');
+    });
+
+  });
 
 });

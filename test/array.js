@@ -1,26 +1,26 @@
+var chai   = require('chai');
+var addons = require('../lib');
+
 describe('Array', function() {
 
-    var chai = require('chai');
-    var exports = require('../build/Release/array');
+  describe('value', function() {
 
-    describe('value', function() {
-
-        it('should be an array', function() {
-            chai.expect(exports.value).to.be.a('array');
-        });
-
+    it('should be an array', function() {
+      chai.expect(addons.array.value).to.be.a('array');
     });
 
-    describe('#push', function() {
+  });
 
-        it('should push "Hello World"', function() {
-            var arr = [];
-            
-            exports.push(arr, 'Hello World');
+  describe('#push', function() {
 
-            chai.expect(arr[0]).to.equal('Hello World');
-        });
+    it('should push "Hello World"', function() {
+      var arr = [];
 
+      addons.array.push(arr, 'Hello World');
+
+      chai.expect(arr[0]).to.equal('Hello World');
     });
+
+  });
 
 });

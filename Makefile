@@ -1,11 +1,13 @@
-test: test-addons
+SHELL := /bin/bash
+PATH  := node_modules/.bin:$(PATH)
 
-build: build-addons
+test: build
+	@mocha test
 
-test-addons:
-	./node_modules/.bin/mocha \
-       	test/*.js
+build:
+	@node-gyp configure build
 
-build-addons:
-	./node_modules/.bin/node-gyp \
-		configure build
+install:
+	@npm install --development
+
+.PHONY: build
